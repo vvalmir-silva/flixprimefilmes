@@ -51,8 +51,6 @@ function Filme(){
              localStorage.setItem("@primeFlix", JSON.stringify(filmesSalvos));
              toast.success("Filme salvo com sucesso")
 
-
-
         }
 
         if(loading){

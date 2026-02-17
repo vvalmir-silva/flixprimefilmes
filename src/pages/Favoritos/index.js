@@ -38,12 +38,20 @@ function Favoritos(){
                 {filmes.map((item) =>{
                     return(
                         <li key={item.id}>
-                            <span>{item.title}</span>
-                            <div>
-                                <Link to={`/filme/${item.id}`}>Ver Detalhes</Link>
-                                <button onClick={() =>exluirFilme(item.id)}>Excluir</button>
+                            <div className="filme-info">
+                                <img 
+                                    src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} 
+                                    alt={item.title} 
+                                    className="filme-poster"
+                                />
+                                <div className="filme-detalhes">
+                                    <span>{item.title}</span>
+                                    <div className="botoes-acoes">
+                                        <Link to={`/filme/${item.id}`}>Ver Detalhes</Link>
+                                        <button onClick={() =>exluirFilme(item.id)}>Excluir</button>
+                                    </div>
+                                </div>
                             </div>
-
                         </li>
                     )
                 })}
